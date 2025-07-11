@@ -2,7 +2,7 @@
 
 A collection of my personal configuration files for a sleek and modern Hyprland desktop environment.
 
-> ✨ **Pro-Tip:** Add a screenshot of your desktop here to show off your setup!
+![Desktop Screenshot](https://raw.githubusercontent.com/qasimsk20/dots/main/home.png)
 
 ---
 
