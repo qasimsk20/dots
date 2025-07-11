@@ -1,8 +1,5 @@
 # 🎨 qasimsk20's Dotfiles
-
-A collection of personal configuration files for a sleek and modern **Hyprland** desktop environment.
 ![Desktop Screenshot](https://raw.githubusercontent.com/qasimsk20/dots/main/home.png)
-
 
 ## 🚀 Core Components
 
@@ -30,11 +27,6 @@ A collection of personal configuration files for a sleek and modern **Hyprland**
   ```bash
   sudo apt install git stow
   ```
-- **macOS:**  
-  ```bash
-  brew install git stow
-  ```
-
 ### 2. Clone the Repository
 
 ```bash
@@ -47,26 +39,29 @@ cd dots
 From inside the cloned `dots` directory, run:
 
 ```bash
-stow -t ~/.config hypr
-stow -t ~/.config waybar
-stow -t ~/.config rofi
-stow -t ~/.config dunst
-stow -t ~/.config ghostty
-stow -t ~/.config swaylock
+stow hypr
+stow waybar
+stow rofi
+stow dunst
+stow ghostty
+stow swaylock
 ```
 
-- The `-t ~/.config` flag tells Stow to symlink each app's config into your `~/.config` directory.
 - You can stow only the components you use, or all of them.
+- For example, to use only Waybar, just run:
+  ```bash
+  stow waybar
+  ```
 
 > **Tip:** To remove a component later, simply run:  
-> `stow -D -t ~/.config `
+> `stow -D `
 
 ## 🛡️ Best Practices
 
 - **Backup first:**  
   Before stowing, back up any existing configs you wish to keep.
 - **Partial installs:**  
-  Only stow what you need—e.g., `stow -t ~/.config hypr waybar` for just Hyprland and Waybar.
+  Only stow what you need—e.g., `stow hypr waybar` for just Hyprland and Waybar.
 - **Version control:**  
   All configs are tracked in git, making it easy to roll back changes or sync across machines.
 
