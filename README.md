@@ -1,55 +1,71 @@
 # 🎨 qasimsk20's Dotfiles
-
-A collection of my personal configuration files for a sleek and modern Hyprland desktop environment.
-
 ![Desktop Screenshot](https://raw.githubusercontent.com/qasimsk20/dots/main/home.png)
-
----
 
 ## 🚀 Core Components
 
-This setup is built using the following applications. The configuration for each can be found in the corresponding directory in this repository.
+| Component   | Description                                                        |
+|-------------|--------------------------------------------------------------------|
+| **Hyprland**| Dynamic tiling Wayland compositor with smooth animations           |
+| **Waybar**  | Highly customizable Wayland bar for Sway and wlroots-based compositors |
+| **Rofi**    | Powerful window switcher, application launcher, and dmenu replacement |
+| **Dunst**   | Lightweight, customizable notification daemon                      |
+| **Ghostty** | Fast, GPU-accelerated terminal emulator                            |
+| **Swaylock**| Simple screen locker for Wayland                                   |
 
-| Component | Description |
-| :--- | :--- |
-| **[Hyprland](https://hyprland.org/)** | A dynamic tiling Wayland compositor with smooth animations. |
-| **[Waybar](https://github.com/Alexays/Waybar)** | A highly customizable Wayland bar for Sway and Wlroots based compositors. |
-| **[Rofi](https://github.com/davatorium/rofi)** | A powerful window switcher, application launcher, and dmenu replacement. |
-| **[Dunst](https://dunst-project.org/)** | A lightweight and customizable notification daemon. |
-| **[Ghostty](https://github.com/ghostty/ghostty)** | A fast, GPU-accelerated terminal emulator. |
-| **[Swaylock](https://github.com/swaywm/swaylock)** | A simple screen locker for Wayland. |
+## ⚡️ Quick Start with GNU Stow
 
----
+**GNU Stow** makes managing and symlinking dotfiles effortless.  
+**Warning:** This will overwrite any existing configuration files. Back up your current configs before proceeding.
 
-## 🔧 Installation
+### 1. Install Dependencies
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/qasimsk20/dots.git
-    cd dots
-    ```
+- **Arch Linux:**  
+  ```bash
+  sudo pacman -S git stow
+  ```
+- **Debian/Ubuntu:**  
+  ```bash
+  sudo apt install git stow
+  ```
+### 2. Clone the Repository
 
-2.  **Create symbolic links:**
-    You can use a script or manually link the configuration files from this repository to your `~/.config` directory.
+```bash
+git clone https://github.com/qasimsk20/dots.git
+cd dots
+```
 
-    > **⚠️ Warning:** The following commands will overwrite your existing configuration files. Please back up your current dotfiles before proceeding.
+### 3. Symlink Configurations with Stow
 
-    ```bash
-    # Navigate to your home directory's config folder
-    cd ~/.config
+From inside the cloned `dots` directory, run:
 
-    # Link each component's configuration
-    ln -sfn /path/to/your/dots/hypr .
-    ln -sfn /path/to/your/dots/waybar .
-    ln -sfn /path/to/your/dots/rofi .
-    ln -sfn /path/to/your/dots/dunst .
-    ln -sfn /path/to/your/dots/ghostty .
-    ln -sfn /path/to/your/dots/swaylock .
-    ```
-    *Remember to replace `/path/to/your/dots/` with the actual absolute path to the cloned repository.*
+```bash
+stow hypr
+stow waybar
+stow rofi
+stow dunst
+stow ghostty
+stow swaylock
+```
 
----
+- You can stow only the components you use, or all of them.
+- For example, to use only Waybar, just run:
+  ```bash
+  stow waybar
+  ```
 
-<p align="center">
-  <i>Crafted with ❤️ on Arch Linux</i>
-</p>
+> **Tip:** To remove a component later, simply run:  
+> `stow -D `
+
+## 🛡️ Best Practices
+
+- **Backup first:**  
+  Before stowing, back up any existing configs you wish to keep.
+- **Partial installs:**  
+  Only stow what you need—e.g., `stow hypr waybar` for just Hyprland and Waybar.
+- **Version control:**  
+  All configs are tracked in git, making it easy to roll back changes or sync across machines.
+
+## ❤️ Crafted on Arch Linux
+
+Feel free to fork, adapt, and contribute.  
+Enjoy your new, productive desktop!
